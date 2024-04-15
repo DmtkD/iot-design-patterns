@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.mtk.doc_and_design_pattern</groupId>
-	<artifactId>lab2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>lab3</artifactId>
+	<version>1.0.0</version>
 	<name>lab2</name>
-	<description>Implementation of lab 2 of course documentation and design pattern</description>
+	<description>Implementation of lab 3 of course documentation and design pattern</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -25,6 +25,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
 		<dependency>

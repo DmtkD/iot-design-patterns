@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Developer Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h1>Developer Management System</h1>
+    <hr>
+    <h2>Save Developer</h2>
+
+    <form action="#" th:action="@{/api/developer}" th:object="${developer}" method="POST">
+        <input type="text" th:field="*{name}" placeholder="Developer First Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{surname}" placeholder="Developer Surname" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{nameOfCompany}" placeholder="Developer Name of Company" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{bankCard}" placeholder="Developer Bank Card" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Developer Email" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{password}" placeholder="Developer Password" class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-success col-2"> Add new Developer </button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/api/developer}"> Back to Developers List</a>
+</div>
+</body>
+
+</html>

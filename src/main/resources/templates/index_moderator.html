@@ -1,0 +1,52 @@
+<!DOCTYPE>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Moderator Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container my-1">
+    <h1>Moderators List</h1>
+        <a th:href="@{/api/moderator/showNewModeratorForm}" class="btn btn-primary mb-1"> Add Moderator </a>
+        <a th:href="@{/}" class="btn btn-success mb-1"> Back to main page </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Moderator Name</th>
+            <th>Position</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="moderator : ${moderators}">
+            <th th:text="${moderator.id}"></th>
+            <td th:text="${moderator.name}"></td>
+            <td th:text="${moderator.surname}"></td>
+            <td th:text="${moderator.moderatorName}"></td>
+            <td th:text="${moderator.position}"></td>
+            <td th:text="${moderator.email}"></td>
+            <td>
+                <a th:href="@{/api/moderator/showFormForUpdate/{id} (id=${moderator.id})}" type="submit" class="btn btn-primary">Update</a>
+                <form action="#" th:action="@{/api/moderator/{id} (id=${moderator.id})}" th:method="DELETE">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
